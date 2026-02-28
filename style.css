@@ -12,7 +12,7 @@ body {
 }
 
 body.home {
-  background-image: url("../images/piano play.avif");
+  background-image: url("piano play.avif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -192,19 +192,19 @@ body.programs .nav-link.active {
 }
 
 .card-volunteer {
-  background-image: url("../images/guitar play.avif");
+  background-image: url("guitar play.avif");
 }
 
 .card-education {
-  background-image: url("../images/kids play piano.avif");
+  background-image: url("kids play piano.avif");
 }
 
 .card-involved {
-  background-image: url("../images/raising hands.avif");
+  background-image: url("raising hands.avif");
 }
 
 body.programs .site-header {
-  background-image: url("../images/piano play.avif");
+  background-image: url("piano play.avif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -267,4 +267,5 @@ body:not(.home) .footer-link {
   .page-heading { font-size: 1.6rem; }
   .nav-link { padding: 7px 10px; }
   .top-nav-list { padding: 10px 12px; }
+
 }
