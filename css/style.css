@@ -1,0 +1,490 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.home {
+  background-image: url("../images/piano play.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body:not(.home) {
+  background-color: #f4f4f4;
+}
+
+.site-header {
+  width: 100%;
+  margin: 0;
+  padding: 50px 20px 20px;
+  text-align: center;
+}
+
+.site-title {
+  margin: 0;
+  color: white;
+  font-weight: 800;
+  font-size: 2.6rem;
+  letter-spacing: 0.5px;
+}
+
+.site-subtitle {
+  margin: 8px 0 0;
+  color: white;
+  opacity: 0.9;
+}
+
+.top-nav {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: rgba(220, 220, 220, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.top-nav-list {
+  list-style: none;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #e6e6e6;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.55);
+  color: #111;
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.75);
+  color: #111;
+}
+
+.page-content {
+  flex: 1;
+  max-width: 900px;
+  margin: 60px auto 80px;
+  padding: 0 20px;
+  color: white;
+  text-align: left;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.page-heading {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+.page-text {
+  margin: 16px 0;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+body.programs .top-nav,
+body.contact .top-nav,
+body.support .top-nav,
+body.standard-page .top-nav {
+  background: #656262;
+  backdrop-filter: none;
+}
+
+body.programs .nav-link,
+body.contact .nav-link,
+body.support .nav-link,
+body.standard-page .nav-link {
+  color: #e6e6e6;
+}
+
+body.programs .nav-link:hover,
+body.contact .nav-link:hover,
+body.support .nav-link:hover,
+body.standard-page .nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #111;
+}
+
+body.programs .nav-link.active,
+body.contact .nav-link.active,
+body.support .nav-link.active,
+body.standard-page .nav-link.active {
+  background: rgba(255, 255, 255, 0.75);
+  color: #111;
+}
+
+body.programs .site-header,
+body.contact .site-header,
+body.support .site-header,
+body.standard-page .site-header {
+  background-image: url("../images/piano play.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.35);
+  background-blend-mode: overlay;
+}
+
+.programs-page {
+  flex: 1;
+  width: 100%;
+  max-width: none;
+  margin: 40px 0 60px;
+  padding: 0 4vw;
+}
+
+.programs-title {
+  margin: 0 0 18px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  text-align: left;
+}
+
+.programs-grid {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3vw;
+}
+
+.program-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.program-card:hover {
+  transform: scale(1.03);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6%;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.card-overlay h3 {
+  font-weight: 800;
+  color: white;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  margin-bottom: 10px;
+}
+
+.card-overlay p {
+  color: white;
+  font-weight: 600;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  margin: 0;
+}
+
+.card-volunteer {
+  background-image: url("../images/guitar play.avif");
+}
+
+.card-education {
+  background-image: url("../images/kids play piano.avif");
+}
+
+.card-involved {
+  background-image: url("../images/raising hands.avif");
+}
+
+.support-page,
+.contact-page,
+.content-page {
+  flex: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+}
+
+.support-intro,
+.contact-intro {
+  margin-bottom: 25px;
+}
+
+.support-title,
+.contact-title,
+.content-title {
+  margin: 0 0 10px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.support-text,
+.contact-text {
+  margin: 0;
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.support-list-wrapper,
+.contact-form-wrapper,
+.content-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.service-categories {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.service-categories > li {
+  margin-bottom: 26px;
+}
+
+.service-categories h3 {
+  margin: 0 0 10px;
+  color: #222;
+  font-size: 1.2rem;
+}
+
+.service-items {
+  margin: 0;
+  padding-left: 0;
+}
+
+.image-list {
+  list-style: none;
+}
+
+.image-list li {
+  position: relative;
+  padding-left: 34px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.image-list li::before {
+  content: "🎵";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #222;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-row textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: #656262;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkbox-row input {
+  margin-top: 4px;
+}
+
+.checkbox-row label {
+  color: #222;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding-top: 5px;
+}
+
+.btn-submit,
+.btn-reset {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-submit {
+  background: #656262;
+  color: white;
+}
+
+.btn-reset {
+  background: #d9d9d9;
+  color: #111;
+}
+
+.btn-submit:hover,
+.btn-reset:hover {
+  opacity: 0.9;
+}
+
+.site-footer {
+  width: 100%;
+  margin: 0;
+  padding: 20px 0;
+  background: rgba(120, 120, 120, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+body.home .footer-link {
+  color: white;
+}
+
+body.programs .footer-link,
+body.contact .footer-link,
+body.support .footer-link,
+body.standard-page .footer-link,
+body:not(.home) .footer-link {
+  color: #222;
+}
+
+.footer-link:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.footer-active {
+  background: rgba(255, 255, 255, 0.6);
+  color: #111;
+}
+
+@media (max-width: 900px) {
+  .programs-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .programs-page {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-title {
+    font-size: 2rem;
+  }
+
+  .programs-title,
+  .support-title,
+  .contact-title,
+  .content-title {
+    font-size: 1.7rem;
+  }
+
+  .page-heading {
+    font-size: 1.6rem;
+  }
+
+  .nav-link {
+    padding: 7px 10px;
+  }
+
+  .top-nav-list {
+    padding: 10px 12px;
+  }
+
+  .support-page,
+  .contact-page,
+  .content-page {
+    padding: 0 15px;
+  }
+
+  .support-list-wrapper,
+  .contact-form-wrapper,
+  .content-box {
+    padding: 20px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .btn-submit,
+  .btn-reset {
+    width: 100%;
+  }
+}
