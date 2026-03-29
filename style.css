@@ -12,7 +12,7 @@ body {
 }
 
 body.home {
-  background-image: url("piano play.avif");
+  background-image: url("../images/piano play.avif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -103,6 +103,49 @@ body:not(.home) {
   line-height: 1.8;
 }
 
+body.programs .top-nav,
+body.contact .top-nav,
+body.support .top-nav,
+body.standard-page .top-nav {
+  background: #656262;
+  backdrop-filter: none;
+}
+
+body.programs .nav-link,
+body.contact .nav-link,
+body.support .nav-link,
+body.standard-page .nav-link {
+  color: #e6e6e6;
+}
+
+body.programs .nav-link:hover,
+body.contact .nav-link:hover,
+body.support .nav-link:hover,
+body.standard-page .nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #111;
+}
+
+body.programs .nav-link.active,
+body.contact .nav-link.active,
+body.support .nav-link.active,
+body.standard-page .nav-link.active {
+  background: rgba(255, 255, 255, 0.75);
+  color: #111;
+}
+
+body.programs .site-header,
+body.contact .site-header,
+body.support .site-header,
+body.standard-page .site-header {
+  background-image: url("../images/piano play.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.35);
+  background-blend-mode: overlay;
+}
+
 .programs-page {
   flex: 1;
   width: 100%;
@@ -117,25 +160,6 @@ body:not(.home) {
   font-weight: 800;
   color: #111;
   text-align: left;
-}
-
-body.programs .top-nav {
-  background: #656262;
-  backdrop-filter: none;
-}
-
-body.programs .nav-link {
-  color: #e6e6e6;
-}
-
-body.programs .nav-link:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color:#111;
-}
-
-body.programs .nav-link.active {
-  background: rgba(255, 255, 255, 0.75);
-  color: #111;
 }
 
 .programs-grid {
@@ -172,69 +196,219 @@ body.programs .nav-link.active {
   justify-content: center;
   padding: 6%;
   text-align: left;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.28);
 }
 
 .card-overlay h3 {
   font-weight: 800;
   color: white;
   font-size: clamp(1.1rem, 2vw, 1.6rem);
+  margin-bottom: 10px;
 }
 
 .card-overlay p {
   color: white;
   font-weight: 600;
   font-size: clamp(1rem, 1.6vw, 1.2rem);
-}
-
-.card-volunteer h3 {
-  max-width: 9ch;
+  margin: 0;
 }
 
 .card-volunteer {
-  background-image: url("guitar play.avif");
+  background-image: url("../images/guitar play.avif");
 }
 
 .card-education {
-  background-image: url("kids play piano.avif");
+  background-image: url("../images/kids play piano.avif");
 }
 
 .card-involved {
-  background-image: url("raising hands.avif");
+  background-image: url("../images/raising hands.avif");
 }
 
-body.programs .site-header {
-  background-image: url("piano play.avif");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.35);
-  background-blend-mode: overlay;
+.support-page,
+.contact-page,
+.content-page {
+  flex: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+}
+
+.support-intro,
+.contact-intro {
+  margin-bottom: 25px;
+}
+
+.support-title,
+.contact-title,
+.content-title {
+  margin: 0 0 10px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.support-text,
+.contact-text {
+  margin: 0;
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.support-list-wrapper,
+.contact-form-wrapper,
+.content-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.service-categories {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.service-categories > li {
+  margin-bottom: 26px;
+}
+
+.service-categories h3 {
+  margin: 0 0 10px;
+  color: #222;
+  font-size: 1.2rem;
+}
+
+.service-items {
+  margin: 0;
+  padding-left: 0;
+}
+
+.image-list {
+  list-style: none;
+}
+
+.image-list li {
+  position: relative;
+  padding-left: 34px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.image-list li::before {
+  content: "🎵";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #222;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-row textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: #656262;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkbox-row input {
+  margin-top: 4px;
+}
+
+.checkbox-row label {
+  color: #222;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding-top: 5px;
+}
+
+.btn-submit,
+.btn-reset {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-submit {
+  background: #656262;
+  color: white;
+}
+
+.btn-reset {
+  background: #d9d9d9;
+  color: #111;
+}
+
+.btn-submit:hover,
+.btn-reset:hover {
+  opacity: 0.9;
 }
 
 .site-footer {
   width: 100%;
   margin: 0;
-  padding: 25px 0;
-}
-
-.footer-line {
-  width: 100%;
-  height: 1px;
-  background-color: #ccc;
-  margin-bottom: 15px;
+  padding: 20px 0;
+  background: rgba(120, 120, 120, 0.35);
+  backdrop-filter: blur(6px);
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
 .footer-link {
   text-decoration: none;
-  font-weight: normal;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 body.home .footer-link {
@@ -242,12 +416,20 @@ body.home .footer-link {
 }
 
 body.programs .footer-link,
+body.contact .footer-link,
+body.support .footer-link,
+body.standard-page .footer-link,
 body:not(.home) .footer-link {
-  color: #444;
+  color: #222;
 }
 
 .footer-link:hover {
-  text-decoration: underline;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.footer-active {
+  background: rgba(255, 255, 255, 0.6);
+  color: #111;
 }
 
 @media (max-width: 900px) {
@@ -262,10 +444,47 @@ body:not(.home) .footer-link {
 }
 
 @media (max-width: 600px) {
-  .site-title { font-size: 2rem; }
-  .programs-title { font-size: 1.7rem; }
-  .page-heading { font-size: 1.6rem; }
-  .nav-link { padding: 7px 10px; }
-  .top-nav-list { padding: 10px 12px; }
+  .site-title {
+    font-size: 2rem;
+  }
 
+  .programs-title,
+  .support-title,
+  .contact-title,
+  .content-title {
+    font-size: 1.7rem;
+  }
+
+  .page-heading {
+    font-size: 1.6rem;
+  }
+
+  .nav-link {
+    padding: 7px 10px;
+  }
+
+  .top-nav-list {
+    padding: 10px 12px;
+  }
+
+  .support-page,
+  .contact-page,
+  .content-page {
+    padding: 0 15px;
+  }
+
+  .support-list-wrapper,
+  .contact-form-wrapper,
+  .content-box {
+    padding: 20px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .btn-submit,
+  .btn-reset {
+    width: 100%;
+  }
 }
