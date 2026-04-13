@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Tacy Foundation | Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="css/style.css" />
+
+<script>
+function searchSite(event) {
+  event.preventDefault();
+
+  const query = document.getElementById("searchInput").value.trim().toLowerCase();
+
+  const pages = [
+    {
+      name: "Home",
+      url: "index.html",
+      keywords: "home welcome tacy foundation music community growth creativity confidence connection volunteer families support services education"
+    },
+    {
+      name: "About Us",
+      url: "about.html",
+      keywords: "about story mission nonprofit organization music education volunteer community service creativity leadership hope kindness personal growth"
+    },
+    {
+      name: "Programs",
+      url: "programs.html",
+      keywords: "programs music education volunteer engagement support services families students learning outreach community"
+    },
+    {
+      name: "Educational Services",
+      url: "educational-services.html",
+      keywords: "educational services music training practice reading outreach literacy students learning community"
+    },
+    {
+      name: "Become a Volunteer",
+      url: "become-a-volunteer.html",
+      keywords: "become volunteer registration orientation events programs support community service adults site supervisors program coordinators"
+    },
+    {
+      name: "Support Services",
+      url: "support-services.html",
+      keywords: "support services transportation maintenance cleaning lessons competitions events dates times community assistance"
+    },
+    {
+      name: "Donate",
+      url: "donate.html",
+      keywords: "donate donation support mission contribution giving help instruments music programs students volunteer service"
+    },
+    {
+      name: "Contact Us",
+      url: "contactus.html",
+      keywords: "contact us email phone message inquiry support form city zip code subject"
+    },
+    {
+      name: "Subscribe",
+      url: "subscribeconfirmation.html",
+      keywords: "subscribe subscription confirmed updates news events volunteer opportunities"
+    }
+  ];
+
+  let results = "";
+  let matchCount = 0;
+
+  pages.forEach(function(page) {
+    if (page.name.toLowerCase().includes(query) || page.keywords.includes(query)) {
+      results += "<div class='content-box' style='margin-top: 20px;'>" +
+                 "<h3 style='margin-top: 0;'><a href='" + page.url + "'>" + page.name + "</a></h3>" +
+                 "<p class='support-text'>Relevant content found on the " + page.name + " page.</p>" +
+                 "</div>";
+      matchCount++;
+    }
+  });
+
+  if (matchCount === 0) {
+    results = "<div class='content-box' style='margin-top: 20px;'><p class='support-text'>No results found. Please try another keyword.</p></div>";
+  }
+
+  document.getElementById("results").innerHTML = results;
+}
+</script>
+</head>
+
+<body class="standard-page">
+
+<header class="site-header">
+<h1 class="site-title">Tacy Foundation</h1>
+<p class="site-subtitle">Demo by Tingting Hu</p>
+</header>
+
+<nav class="top-nav">
+<ul class="top-nav-list">
+<li><a class="nav-link" href="index.html">Home</a></li>
+<li><a class="nav-link" href="about.html">About Us</a></li>
+<li><a class="nav-link" href="programs.html">Programs</a></li>
+<li><a class="nav-link" href="contactus.html">Contact Us</a></li>
+</ul>
+</nav>
+
+<main class="content-page">
+<section class="content-box">
+<h2 class="content-title">Search</h2>
+<p class="support-text">Use a keyword to search pages on this website.</p>
+
+<form onsubmit="searchSite(event)" style="margin-top: 20px;">
+<input type="text" id="searchInput" placeholder="Search this website..." required style="width: 70%; padding: 12px; border: 1px solid #bdbdbd; border-radius: 8px; font-size: 1rem;">
+<input type="submit" value="Search" class="btn-submit">
+</form>
+
+<div id="results"></div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="footer-links">
+<a class="footer-link" href="donate.html">Donate</a>
+<a class="footer-link footer-active" href="search.html">Search</a>
+<a class="footer-link" href="subscribeconfirmation.html">Subscribe</a>
+</div>
+</footer>
+
+</body>
+</html>
